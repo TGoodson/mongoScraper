@@ -5,7 +5,7 @@ const Comment = require('../models/Comment.js')
 router.post('/', (req, res) => {
 	console.log('comment post: ', req.body)
 	const newComment = {
-		name: req.body.name,
+		name: req.body.name || 'Anon',
 		body: req.body.body
 	}
 	const article = req.body.articleID

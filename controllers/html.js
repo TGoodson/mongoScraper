@@ -5,7 +5,8 @@ const scraper = require('../scraping/scraper.js')
 
 router.get('/', (req, res) => {
 	scraper((data) => {
-		data.forEach(e => Article.create(e, err => {
+		data.filter(e => Article.findOne({title: e.title}))
+			.forEach(e => Article.create(e, err => {
 			if (err.code === 11000) {
 				console.log(err.message)
 			} else if (err) {

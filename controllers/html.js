@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 				console.log(err)
 			}
 		}))
-		Article.find({}).exec((err, doc) => {
+		Article.find({}).sort({created_at: -1}).exec((err, doc) => {
 			err ? console.log(err) : res.render('index', {articles: doc});
 		})
 	})

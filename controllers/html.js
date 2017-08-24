@@ -4,7 +4,7 @@ const Comment = require('../models/Comment.js')
 const scraper = require('../scraping/scraper.js')
 
 router.get('/', (req, res) => {
-	scraper((data) => {
+	scraper(data => {
 		data.filter(e => Article.findOne({title: e.title}))
 			.forEach(e => Article.create(e, err => {
 			if (err.code === 11000) {
@@ -20,9 +20,13 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-	Article.findOne({_id: req.params.id}).populate('comment').exec((err, doc) => {
-		err ? console.log(err) : res.render('article', {article: doc})
-	})
+	if (req.params.id == 'favicon.ico') {
+		res.send('./favicon.ico')
+	} else {
+		Article.findOne({_id: req.params.id}).populate('comment').exec((err, doc) => {
+			err ? console.log(err) : res.render('article', {article: doc})
+		})
+	}
 });
 
 module.exports = router;

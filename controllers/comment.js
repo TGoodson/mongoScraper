@@ -21,8 +21,15 @@ router.post('/', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
-	Comment.remove({_id: req.params.id}).exec((err, doc) => {
-		err ? console.log(err) : res.send(doc)
+	const commentID = req.params.id;
+	Article.update({comment: commentID}, {$pull:{comment: commentID}}, (err, doc) => {
+		if (err) {
+			console.log(err)
+		} else {
+			Comment.remove({_id: commentID}).exec((err, doc) => {
+				err ? console.log(err) : res.send(doc)
+			})
+		}
 	})
 })
 

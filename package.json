@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aarongaither/mongoScraper.git"
+    "url": "git+https://github.com/TGoodson/mongoScraper.git"
   },
   "author": "Aaron Gaither",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aarongaither/mongoScraper/issues"
+    "url": "https://github.com/TGoodson/mongoScraper/issues"
   },
-  "homepage": "https://github.com/aarongaither/mongoScraper#readme",
+  "homepage": "https://github.com/TGoodson/mongoScraper#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
     "bulma": "^0.5.1",

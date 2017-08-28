@@ -28,7 +28,7 @@ app.use('/api/comment', commentRoutes);
 app.use(express.static('public'));
 
 // database configuration with mongoose
-mongoose.connect('mongodb://heroku_z2s0wghp:hht800pdkbom4ke45f3js75jn3@ds151993.mlab.com:51993/heroku_z2s0wghp');
+mongoose.connect('');
 const db = mongoose.connection;
 db.on('error', error => console.log('Mongoose Error: ', error));
 db.once('open', () => console.log('Mongoose connection successful.'));

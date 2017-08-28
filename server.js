@@ -28,7 +28,7 @@ app.use('/api/comment', commentRoutes);
 app.use(express.static('public'));
 
 // database configuration with mongoose
-mongoose.connect('');
+mongoose.connect();
 const db = mongoose.connection;
 db.on('error', error => console.log('Mongoose Error: ', error));
 db.once('open', () => console.log('Mongoose connection successful.'));

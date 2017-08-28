@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/TGoodson/mongoScraper.git"
   },
-  "author": "Aaron Gaither",
+  "author": "Trevon Goodson",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/TGoodson/mongoScraper/issues"
